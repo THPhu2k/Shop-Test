@@ -18,9 +18,7 @@
 
 let GoodsInStock = {
     shopName: "Goods in Stock",
-    stock1: "apple",
-    stock2: "melon",
-    stock3: "mango",
+    stock: ["apple", "melon", "mango",],
     owner: "THPhu2k",
 }
 
@@ -29,8 +27,7 @@ localStorage.setItem(GoodsInStock.shopName,ShopStatus)
 
 var Force = localStorage.getItem(GoodsInStock)
 var Dialog = JSON.parse(Force)
-console.log("Welcome to" + " " + GoodsInStock.shopName + " " + "you need" + " " + GoodsInStock.stock1 + "s" + "?"
-+ " " + GoodsInStock.stock2 + "s" + "? Or maybe some"
-+ " " + GoodsInStock.stock3 + "s" + "?"
-+ " " + "It has been" + " " + GoodsInStock.owner + " " + "and we hope you enjoy your shopping at" + " " + GoodsInStock.shopName)
 
+for (let Count = 0; Count < GoodsInStock.stock.length; Count++) {
+    console.log(GoodsInStock.stock[Count]);
+}
