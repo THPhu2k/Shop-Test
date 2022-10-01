@@ -1,27 +1,92 @@
-let Cart = 0
+/* ----- */
+/* Apple */
+/* ----- */
+let Apple = 0
 
-function Add() {
-    if (Cart == 0) {
-        Cart++
-        console.log(Cart + " " + "item in your cart");
-    } else if (Cart == 10) {
+function AddApple() {
+    if (Apple == 0) {
+        Apple++
+        console.log(Apple + " " + "apple in your cart");
+    } else if (Apple == 10) {
         console.log("max reached");
-    } else if (Cart > 0) {
-        Cart++
-        console.log(Cart + " " + "items in your cart");
+    } else if (Apple > 0) {
+        Apple++
+        console.log(Apple + " " + "apples in your cart");
     }
-    document.getElementById("Value").innerHTML = Cart;
+    document.getElementById("AppleValue").innerHTML = Apple;
 }
 
-function Subtract() {
-    if (Cart == 2 ** Cart == 1) {
-        Cart--
-        console.log(Cart + " " + "item in your cart");
-    } else if (Cart == 0) {
+function SubtractApple() {
+    if (Apple == 2 ** Apple == 1) {
+        Apple--
+        console.log(Apple + " " + "apple in your cart");
+    } else if (Apple == 0) {
         console.log("min reached");
-    } else if (Cart <= 10) {
-        Cart--
-        console.log(Cart + " " + "items in your cart");
+    } else if (Apple <= 10) {
+        Apple--
+        console.log(Apple + " " + "apples in your cart");
     }
-    document.getElementById("Value").innerHTML = Cart;
+    document.getElementById("AppleValue").innerHTML = Apple;
+}
+
+/* ----- */
+/* Melon */
+/* ----- */
+let Melon = 0
+
+function AddMelon() {
+    if (Melon == 0) {
+        Melon++
+        console.log(Melon + " " + "melon in your cart");
+    } else if (Melon == 10) {
+        console.log("max reached");
+    } else if (Melon > 0) {
+        Melon++
+        console.log(Melon + " " + "melons in your cart");
+    }
+    document.getElementById("MelonValue").innerHTML = Melon;
+}
+
+function SubtractMelon() {
+    if (Melon == 2 ** Melon == 1) {
+        Melon--
+        console.log(Melon + " " + "melon in your cart");
+    } else if (Melon == 0) {
+        console.log("min reached");
+    } else if (Melon <= 10) {
+        Melon--
+        console.log(Melon + " " + "melons in your cart");
+    }
+    document.getElementById("MelonValue").innerHTML = Melon;
+}
+
+/* ----- */
+/* Mango */
+/* ----- */
+let Mango = 0
+
+function AddMango() {
+    if (Mango == 0) {
+        Mango++
+        console.log(Mango + " " + "mango in your cart");
+    } else if (Mango == 10) {
+        console.log("max reached");
+    } else if (Mango > 0) {
+        Mango++
+        console.log(Mango + " " + "mangos in your cart");
+    }
+    document.getElementById("MangoValue").innerHTML = Mango;
+}
+
+function SubtractMango() {
+    if (Mango == 2 ** Mango == 1) {
+        Mango--
+        console.log(Mango + " " + "mango in your cart");
+    } else if (Mango == 0) {
+        console.log("min reached");
+    } else if (Mango <= 10) {
+        Mango--
+        console.log(Mango + " " + "mangos in your cart");
+    }
+    document.getElementById("MangoValue").innerHTML = Mango;
 }
