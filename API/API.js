@@ -1,17 +1,17 @@
-// const FetchAPI = async ()=>{
-//     var response = "no messages found"
+const FetchAPI = async ()=>{
+    var response = "no messages found"
 
-//     response = await fetch('https://retoolapi.dev/U9Z01Z/userdata')
-//     // in basic terms, script will wait until it got the data
-//     // pro? avoid slow internet issues
-//     // con? idk? not yet.
-//     data = await response.json()
-//     // translate da data
-//     console.log(data);
-//     // print da translated data
-// }
+    response = await fetch('https://retoolapi.dev/U9Z01Z/userdata')
+    // in basic terms, script will wait until it got the data
+    // pro? avoid slow internet issues
+    // con? idk? not yet.
+    data = await response.json()
+    // translate da data
+    console.log(data);
+    // print da translated data
+}
 
-// FetchAPI()
+FetchAPI()
 
 // ------ //
 // CODE 1 //
