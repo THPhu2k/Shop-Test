@@ -1,3 +1,5 @@
+var FavStat = "No"
+
 const netflix = async() => {
 	const options = {
 		method: 'GET',
@@ -17,10 +19,11 @@ const netflix = async() => {
 
 	film = data.results
 	film.forEach(element => {
-		console.log(element);
+		//console.log(element);
 
 		MovieDiv = document.createElement("div")
 		MovieDiv.className = "MoviePlaceHolder"
+		MovieDiv.Id = element.title
 
 		var titleH1 = MovieDiv.className
 		var imgLink = element.img
@@ -34,6 +37,7 @@ const netflix = async() => {
 		img.src = imgLink
 
 		LikeButton = document.createElement('img')
+		LikeButton.Id = element.title + "LB"
 		LikeButton.className = "likeButton"
 		LikeButton.src = "./Assets/Img/unFavorite Icon.png"
 
@@ -41,18 +45,37 @@ const netflix = async() => {
 		MovieDiv.appendChild(h1)
 		MovieDiv.appendChild(LikeButton)
 
+		LikeButton.addEventListener('click', function handleClick(event) {
+			MovieIden = JSON.stringify(element.title + "LB")
+
+			// if(FavStat == "No") {
+			// 	FavStat = "Yes"
+			// 	document.querySelector(MovieIden).src = "./Assets/Img/Favorite Icon.png";
+			// } else if (FavStat == "Yes") {
+			// 	FavStat = "No"
+			// 	document.querySelector(MovieIden).src = "./Assets/Img/unFavorite Icon.png";
+			// }
+			// localStorage.setItem(element.title,"Liked")
+			// console.log(MovieIden)
+
+			if(FavStat == "No") {
+				FavStat = "Yes"
+				localStorage.setItem(element.title,"Liked")
+			} else if (FavStat == "Yes") {
+				FavStat = "No"
+				localStorage.removeItem(element.title)
+			}
+		});
+
 		if(filmCount >= 0 & filmCount < 10){
 			document.getElementById('row-poster1').appendChild(MovieDiv)
        	    filmCount ++
-            console.log(filmCount)
 		} else if(filmCount >= 10 & filmCount < 20){
 			document.getElementById('row-poster2').appendChild(MovieDiv)
        	    filmCount ++
-            console.log(filmCount)
 		} else if(filmCount >= 20 & filmCount < 30){
 			document.getElementById('row-poster3').appendChild(MovieDiv)
        	    filmCount ++
-            console.log(filmCount)
 		}
 	});
 
