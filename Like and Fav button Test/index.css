@@ -1,0 +1,31 @@
+#Game1 {
+    width: 200px;
+    padding: 10px;
+    border: 5px solid cornflowerblue;
+    background-color: cadetblue;
+    margin: 0;
+}
+
+.Fav_Button {
+    display: none;
+}
+
+#Descriptions {
+    display: none;
+}
+
+#Game1:hover {
+    width: 200px;
+    padding: 10px;
+    border: 5px solid cornflowerblue;
+    background-color: cadetblue;
+    margin: 0;
+}
+
+#Game1:hover > .Fav_Button {
+    display: block;
+}
+
+#Game1:hover > #Descriptions {
+    display: block;
+}

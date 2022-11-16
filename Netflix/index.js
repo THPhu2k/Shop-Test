@@ -18,14 +18,39 @@ const netflix = async() => {
 	film = data.results
 	film.forEach(element => {
 		console.log(element);
+
+		MovieDiv = document.createElement("div")
+		MovieDiv.className = "MoviePlaceHolder"
+
+		var titleH1 = MovieDiv.className
 		var imgLink = element.img
 
-		img = document.createElement('img')
+		h1 = document.createElement('h1')
+		h1.className = "title"
+		h1.innerHTML = element.title
 
+		img = document.createElement('img')
+		img.className = "img"
 		img.src = imgLink
 
-		if(filmCount >= 0 & filmCount < 5){
-			document.getElementById('row-poster1').appendChild(img)
+		LikeButton = document.createElement('img')
+		LikeButton.className = "likeButton"
+		LikeButton.src = "./Assets/Img/unFavorite Icon.png"
+
+		MovieDiv.appendChild(img)
+		MovieDiv.appendChild(h1)
+		MovieDiv.appendChild(LikeButton)
+
+		if(filmCount >= 0 & filmCount < 10){
+			document.getElementById('row-poster1').appendChild(MovieDiv)
+       	    filmCount ++
+            console.log(filmCount)
+		} else if(filmCount >= 10 & filmCount < 20){
+			document.getElementById('row-poster2').appendChild(MovieDiv)
+       	    filmCount ++
+            console.log(filmCount)
+		} else if(filmCount >= 20 & filmCount < 30){
+			document.getElementById('row-poster3').appendChild(MovieDiv)
        	    filmCount ++
             console.log(filmCount)
 		}
