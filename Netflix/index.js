@@ -1,4 +1,15 @@
-var FavStat = "No"
+// var KeyCount = 0
+
+// for (let [key, value] of Object.entries(localStorage)) {
+// 	if (value == "Liked") {
+// 		//console.log(`${key}: ${value}`);
+
+// 		//document.getElementById(String(key) + "LB").src = "./Assets/Img/Favorite Icon.png";
+// 		console.log( String(key) + "LB" )
+// 		KeyCount++
+// 	}
+//   }
+//   console.log(KeyCount)
 
 const netflix = async() => {
 	const options = {
@@ -30,6 +41,7 @@ const netflix = async() => {
 
 		h1 = document.createElement('h1')
 		h1.className = "title"
+		h1.id = JSON.stringify(element.title) 
 		h1.innerHTML = element.title
 
 		img = document.createElement('img')
@@ -37,34 +49,31 @@ const netflix = async() => {
 		img.src = imgLink
 
 		LikeButton = document.createElement('img')
-		LikeButton.Id = element.title + "LB"
+		LikeButton.id = element.title + "LB"
 		LikeButton.className = "likeButton"
 		LikeButton.src = "./Assets/Img/unFavorite Icon.png"
+
+		//console.log(LikeButton)
 
 		MovieDiv.appendChild(img)
 		MovieDiv.appendChild(h1)
 		MovieDiv.appendChild(LikeButton)
 
 		LikeButton.addEventListener('click', function handleClick(event) {
-			MovieIden = JSON.stringify(element.title + "LB")
+			MovieIden = String(element.title) + "LB"
+			//console.log(String(element.title))
+			//console.log(element.title)
 
-			// if(FavStat == "No") {
-			// 	FavStat = "Yes"
-			// 	document.querySelector(MovieIden).src = "./Assets/Img/Favorite Icon.png";
-			// } else if (FavStat == "Yes") {
-			// 	FavStat = "No"
-			// 	document.querySelector(MovieIden).src = "./Assets/Img/unFavorite Icon.png";
-			// }
-			// localStorage.setItem(element.title,"Liked")
-			// console.log(MovieIden)
-
-			if(FavStat == "No") {
-				FavStat = "Yes"
-				localStorage.setItem(element.title,"Liked")
-			} else if (FavStat == "Yes") {
-				FavStat = "No"
+			if (localStorage.getItem(element.title)) {
 				localStorage.removeItem(element.title)
+				document.getElementById(MovieIden).src = "./Assets/Img/unFavorite Icon.png";
+			} else {
+				localStorage.setItem(element.title,"Liked")
+				document.getElementById(MovieIden).src = "./Assets/Img/Favorite Icon.png";
 			}
+
+			console.log(MovieIden)
+			
 		});
 
 		if(filmCount >= 0 & filmCount < 10){

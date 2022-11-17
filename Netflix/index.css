@@ -32,7 +32,7 @@ body{
     font-size: small;
 }
 
-.MoviePlaceHolder .likeButton{
+.likeButton{
     display: none;
     right: 100%;
     height: 45px;
