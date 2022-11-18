@@ -59,6 +59,17 @@ const netflix = async() => {
 		MovieDiv.appendChild(h1)
 		MovieDiv.appendChild(LikeButton)
 
+		for (let [key, value] of Object.entries(localStorage)) {
+			if (value == "Liked") {
+				//console.log(`${key}: ${value}`);
+				MovieIden2 = String(key) + "LB"
+				if (document.getElementById(MovieIden2)) {
+					document.getElementById(MovieIden2).src = "./Assets/Img/Favorite Icon.png";
+				}
+			}
+		  }
+		  //console.log(KeyCount)
+
 		LikeButton.addEventListener('click', function handleClick(event) {
 			MovieIden = String(element.title) + "LB"
 			//console.log(String(element.title))
