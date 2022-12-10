@@ -32,6 +32,10 @@ const netflix = async() => {
 	film.forEach(element => {
 		//console.log(element);
 
+		
+
+///////////////////////////////////////////////////////////////////////////////////
+
 		MovieDiv = document.createElement("div")
 		MovieDiv.className = "MoviePlaceHolder"
 		MovieDiv.Id = element.title
@@ -65,6 +69,36 @@ const netflix = async() => {
 				MovieIden2 = String(key) + "LB"
 				if (document.getElementById(MovieIden2)) {
 					document.getElementById(MovieIden2).src = "./Assets/Img/Favorite Icon.png";
+
+					LikedMovieDiv = document.createElement("div")
+
+						LikedMovieDiv.className = "MoviePlaceHolder"
+						LikedMovieDiv.Id = String(key)
+
+						var LikedtitleH1 = LikedMovieDiv.className
+						var LikedimgLink = String(key)
+
+						Likedh1 = document.createElement('h1')
+						Likedh1.className = "title"
+						Likedh1.id = JSON.stringify(key) 
+						Likedh1.innerHTML = String(key)
+
+						Likedimg = document.createElement('img')
+						Likedimg.className = "img"
+						Likedimg.src = 
+
+						LikedLikeButton = document.createElement('img')
+						LikedLikeButton.id = String(key) + "LB"
+						LikedLikeButton.className = "likeButton"
+						LikedLikeButton.src = "./Assets/Img/unFavorite Icon.png"
+
+						//console.log(LikeButton)
+
+						LikedMovieDiv.appendChild(Likedimg)
+						LikedMovieDiv.appendChild(Likedh1)
+						LikedMovieDiv.appendChild(LikedLikeButton)
+
+						document.getElementById('row-poster0').appendChild(LikedMovieDiv)
 				}
 			}
 		  }

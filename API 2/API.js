@@ -9,7 +9,7 @@ const EminemIsAfraid = async ()=>{
 
     var response = ""
 
-    fetch('https://youtube-music1.p.rapidapi.com/v2/search?query=eminem', options)
+    response = await fetch('https://youtube-music1.p.rapidapi.com/v2/search?query=eminem', options)
 
     data = await response.json()
 
@@ -19,3 +19,5 @@ const EminemIsAfraid = async ()=>{
         
     });
 }
+
+EminemIsAfraid()
